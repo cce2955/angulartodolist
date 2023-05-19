@@ -1,0 +1,138 @@
+/* Set the background color of the body */
+body {
+  background-color: #f5f5f5;
+}
+
+/* Styling for the main wrapper */
+#wrapper {
+  font: 20px Helvetica, sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 50px;
+}
+
+/* Styling for the title */
+.title {
+  font-size: 50px;
+  font-style: italic;
+  color: #333;
+  animation: slideIn 0.5s ease-in;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* Styling for the card */
+.card {
+  display: inline-block;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  animation: pulse 2s infinite alternate;
+  width: inherit;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+/* Styling for each todo item */
+.todo-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  animation: flipIn 0.5s;
+  animation-fill-mode: both;
+  transform-style: preserve-3d;
+  width: inherit;
+  margin: 0 auto;
+}
+
+/* Styling for new todo name and description input fields */
+.new-todo-name,
+.new-todo-description {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Styling for the add todo button */
+.add-todo {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Styling for deleted todo items */
+.deleted {
+  animation-name: flipOut;
+  animation-fill-mode: both;
+}
+
+/* Styling for the todo name */
+.todo-name {
+  margin: 0;
+  color: #333;
+}
+
+/* Styling for the todo description */
+.todo-description {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+/* Styling for the delete todo button */
+.delete-todo {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Animation keyframes for flipping in the todo item */
+@keyframes flipIn {
+  0% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  80% {
+    transform: rotateX(10deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* Animation keyframes for flipping out the todo item */
+@keyframes flipOut {
+  0% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+/* Animation keyframes for pulsating effect on the card */
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}

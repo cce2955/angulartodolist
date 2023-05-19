@@ -1,0 +1,24 @@
+<div id="wrapper">
+  <div id="article">
+    <h1 class="title">Angular Todo Application</h1>
+
+    <div class="card">
+      <input class="new-todo-name" [(ngModel)]="newTodoName" placeholder="Todo Name" (keydown.enter)="addTodo()" />
+      <input class="new-todo-description" [(ngModel)]="newTodoDescription" placeholder="Todo Description" (keydown.enter)="addTodo()" />
+      <button class="add-todo" (click)="addTodo()">Add Todo</button>
+    </div>
+
+    <div *ngFor="let todo of todos; trackBy: trackByTodo" class="todo-item" [ngClass]="{'deleted': todo.deleted}">
+      <h3 class="todo-name">{{ todo.name }}</h3>
+      <p class="todo-description">{{ todo.description }}</p>
+      <button class="delete-todo" (click)="deleteTodoFromDeleted(todo)" *ngIf="todo.deleted">Undo</button>
+      <button class="delete-todo" (click)="deleteTodo(todo)" *ngIf="!todo.deleted">Delete</button>
+    </div>
+
+    <div *ngFor="let todo of deletedTodos" class="todo-item deleted">
+      <h3 class="todo-name">{{ todo.name }}</h3>
+      <p class="todo-description">{{ todo.description }}</p>
+      <button class="delete-todo" (click)="deleteTodo(todo)">Delete</button>
+    </div>
+  </div>
+</div>
